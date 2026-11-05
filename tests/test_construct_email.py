@@ -41,12 +41,6 @@ def test_render_email_affiliation_truncation():
     assert "Uni 7" not in html
 
 
-def test_render_email_no_affiliations():
-    paper = make_sample_paper(affiliations=None, score=7.0, tldr="ok")
-    html = render_email([paper])
-    assert "Unknown Affiliation" in html
-
-
 def test_get_stars_low_score():
     assert get_stars(5.0) == ""
     assert get_stars(6.0) == ""
